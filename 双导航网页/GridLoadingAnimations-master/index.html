@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grid Loading Animations</title>
+		<meta name="description" content="Some inspiration for loading animations on grid items" />
+		<meta name="keywords" content="loading, animation, grid, animation, effects, inspiration, web design" />
+        <link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+	<style type="text/css">
+		body{
+			padding:0;
+			margin:0;
+			background: #f2f2f2;
+		}
+		.wrap .line{
+			height: 500px;
+			width: 188px;
+			margin:0 auto;
+		}
+	</style>
+        <link rel="stylesheet" type="text/css" href="css1/normalize.css" />
+	<link rel='stylesheet prefetch' href='http://www.jq22.com/jquery/font-awesome.4.6.0.css'>
+	<link rel='stylesheet prefetch' href='css1/animate.min.css'>
+	<link rel="stylesheet" type="text/css" href="css1/default.css">
+	<link rel="stylesheet" type="text/css" href="css1/styles.css">
+        
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,500,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="sponsor/pater.css" />
+		<script>document.documentElement.className = 'js';</script>
+        <style type="text/css">
+*{ margin:0; padding:0; list-style:none;}
+
+
+.navbox{height:40px;position:relative;z-index:9; margin:auto;background:#554b4a;filter:alpha(opacity=90);-moz-opacity:0.90;opacity:0.90;font-family:'微软雅黑';}
+.nav{width:1002px;margin:0 auto;height:40px; list-style:none;}
+.nav li{float:left;height:40px;position:relative; list-style:none;}
+.nav li.last{background:none;}
+.nav li a{text-decoration:none;}
+.nav li a span{float:left;display:block;line-height:40px;font-size:14px;color:#ffffff;cursor:pointer;width:143px;text-align:center; }
+.mj_hover_menu{text-decoration:none; width:143px; background:url(images/menu_hover.jpg); height:40px;}
+.nav li.selected .submenu{display:block;}
+.nav li .submenu{display:none;position:absolute;top:40px;left:-9px;}
+.nav li .submenu li{float:none;padding:0;background:none;height:auto;border-bottom:dotted 0px #BEBEBE;}
+.mj_menu_pro_bg{width:825px; height:235px; background:url(images/menu_pro_bg.png) no-repeat;}
+.mj_menu_pro_main{width:765px; margin:auto; padding-top:12px;}
+.mj_menu_pro_li{ float:left;}
+.mj_menu_li_txt{line-height:22px; font-size:12px; color:#696969;}
+.mj_menu_li_txt font{font-size:14px; color:#bb1721;}
+.mj_menu_li_txt a{color:#696969; text-decoration:none;}
+.mj_menu_li_txt a:hover{color:#696969; text-decoration:underline;}
+
+.mj_menu_news_bg{width:480px; height:185px; background:url(images/menu_news_bg.png) no-repeat;}
+.mj_menu_news_main{width:440px; margin:auto; padding-top:12px;}
+.mj_menu_news_li{padding:0px 30px; margin-right:30px; height:150px; float:left; border-right:solid 1px #cccccc; }
+.mj_menu_news_img{float:left; text-align:left; color:#bb1721; line-height:30px; font-size:14px;}
+.mj_menu_news_li2{padding:0px 30px; height:150px; float:right; border-left:solid 1px #cccccc; }
+.mj_menu_news_img2{float:left; margin-left:30px; text-align:left; color:#bb1721; line-height:30px; font-size:14px;}
+.mj_menu_news_li3{padding:0px 25px; height:150px; float:right; border-left:solid 1px #cccccc; }
+.mj_menu_news_img3{float:left; margin-left:10px; text-align:left; color:#bb1721; line-height:30px; font-size:14px;}
+</style>
+	</head>
+	<body class="loading">
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+		</svg>
+        
+        
+        
+        <div class="navbox">
+  <div class="nav">
+  
+      <li class="drop-menu-effect"><a href="#"><span>网站首页</span></a></li>
+      
+      <li class="drop-menu-effect"> <a href="#"><span>明景产品</span></a>
+        <div class="submenu">
+          <div class="mj_menu_pro_bg">
+            <div class="mj_menu_pro_main">
+              <div class="mj_menu_pro_li">
+                <div class="mj_menu_li_txt">
+                  <a href="#"><font>摄像机（网络高清）</font></a><br />
+                  <a href="#">网络高清摄像机系列</a><br />
+                  <a href="#">网络高清球型摄像机系列</a><br />
+                  <a href="#">网络高清云台摄像机系列</a>
+                  <p><font>摄像机（SDI高清）</font><br />
+                  <a href="#">SDI数字高清摄像机系列</a><br />
+                  <a href="#">SDI数字高清球型摄像机系列</a><br />
+                  <a href="#">SDI数字高清云台摄像机系列</a></p>
+                </div>
+              </div>
+              <div class="mj_menu_pro_li" style="padding-left:48px;">
+                <div class="mj_menu_li_txt">
+                  <a href="#"><font>摄像机（模拟）</font></a><br />
+                  <a href="#">摄像机系列</a><br />
+                  <a href="#">智能分析系列</a><br />
+                  <a href="#">夜视监控系列</a><br />
+                  <a href="#">云台摄像机系列</a><br />
+                  <a href="#">高速球型摄像机系列</a>
+                  <p><a href="#"><font>存储产品</font></a></p>
+                </div>
+              </div>
+              <div class="mj_menu_pro_li" style="padding:20px 0px 0px 48px;">
+                <div class="mj_menu_li_txt">
+                  <a href="#">中低速球型摄像机系列</a><br />
+                  <a href="#">监视器系列</a><br />
+                  <a href="#">控制键盘系列</a><br />
+                  <a href="#">支架系列</a>
+                  <p style="padding-top:24px;"><a href="#"><font>编解码产品</font></a></p>
+                </div>
+              </div>
+              <div class="mj_menu_pro_li" style="padding-left:48px;">
+                <div class="mj_menu_li_txt">
+                  <a href="#"><font>行业解决方案</font></a><br />
+                  <a href="#">车载系统解决方案</a><br />
+                  <a href="#">行业产品</a>
+                  <p style="padding-top:66px;"><a href="#"><font>智能交通产品</font></a></p>
+                </div>
+              </div>
+              <div class="mj_menu_pro_li" style="padding-left:48px;">
+                <div class="mj_menu_li_txt">
+                  <a href="#"><font>防爆产品</font></a><br />
+                  <a href="#">防爆产品（高清）</a><br />
+                  <a href="#">防爆产品（模拟）</a>
+                  <p style="padding-top:66px;"><a href="#"><font>平台软件</font></a></p>
+                </div>
+              </div>
+              <div style="clear:both; height:0px; overflow:hidden;"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="drop-menu-effect"><a href="#"><span>资讯中心</span></a>
+        <div class="submenu">
+          <div class="mj_menu_news_bg">
+            <div class="mj_menu_news_main">
+              <div class="mj_menu_news_li">
+                <div class="mj_menu_li_txt">
+                  <a href="#">公司新闻</a><br />
+                  <a href="#">行业新闻</a><br />
+                  <a href="#">展会信息</a></div>
+              </div>
+              <div class="mj_menu_news_img"><img src="images/p.png" /><br />
+                <font>资讯中心</font></div>
+              <div style="clear:both; height:0px; overflow:hidden;"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="drop-menu-effect"> <a href="#"><span>下载中心</span></a>
+        <div class="submenu">
+          <div class="mj_menu_news_bg">
+            <div class="mj_menu_news_main">
+              <div class="mj_menu_news_li">
+                <div class="mj_menu_li_txt">
+                  <a href="#">总览</a><br />
+                  <a href="#">认证证书下载</a><br />
+                  <a href="#">说明书下载</a><br />
+                  <a href="#">协议下载</a><br />
+                  <a href="#">样本目录下载</a><br />
+                  <a href="#">其它</a></div>
+              </div>
+              <div class="mj_menu_news_img"><img src="images/p.png" /><br />
+                <font>下载中心</font></div>
+              <div style="clear:both; height:0px; overflow:hidden;"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="drop-menu-effect"> <a href="#"><span>企业概况</span></a>
+        <div class="submenu">
+          <div class="mj_menu_news_bg">
+            <div class="mj_menu_news_main">
+              <div class="mj_menu_news_li">
+                <div class="mj_menu_li_txt"><a href="#">公司简介</a><br />
+                  <a href="#">质量方针</a><br />
+                  <a href="#">企业理念</a><br />
+                  <a href="#">发展历程</a><br />
+                  <a href="#">公司荣誉</a><br />
+                  <a href="#">企业风采</a></div>
+              </div>
+              <div class="mj_menu_news_img"><img src="images/p.png" /><br />
+                <font>公司概况</font></div>
+              <div style="clear:both; height:0px; overflow:hidden;"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="drop-menu-effect"> <a href="#"><span>联系我们</span></a>
+        <div class="submenu" style="left:-347px;">
+          <div class="mj_menu_news_bg">
+            <div class="mj_menu_news_main">
+              <div class="mj_menu_news_li2">
+                <div class="mj_menu_li_txt"><a href="#">联系方式</a><br />
+                  <a href="#">智能地图</a><br />
+                  <a href="#">人才招聘</a><br />
+                  <a href="#">在线留言</a></div>
+              </div>
+              <div class="mj_menu_news_img2"><img src="images/p.png" /><br />
+                <font>联系我们</font></div>
+              <div style="clear:both; height:0px; overflow:hidden;"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="drop-menu-effect"> <a href="#"><span>工程技术中心</span></a>
+        <div class="submenu" style="left:-347px;">
+          <div class="mj_menu_news_bg">
+            <div class="mj_menu_news_main">
+              <div class="mj_menu_news_li3">
+                <div class="mj_menu_li_txt"><a href="#">工程实例名录</a><br />
+                  <a href="#">部分案例图片</a></div>
+              </div>
+              <div class="mj_menu_news_img3"><img src="images/p.png" /><br />
+                <font>工程科技研究中心</font></div>
+              <div style="clear:both; height:0px; overflow:hidden;"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+    </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script>
+$(function(){
+	lanrenzhijia(".drop-menu-effect");
+});
+function lanrenzhijia(_this){
+	$(_this).each(function(){
+		var $this = $(this);
+		var theMenu = $this.find(".submenu");
+		var tarHeight = theMenu.height();
+		theMenu.css({height:0});
+		$this.hover(
+			function(){
+				$(this).addClass("mj_hover_menu");
+				theMenu.stop().show().animate({height:tarHeight},400);
+			},
+			function(){
+				$(this).removeClass("mj_hover_menu");
+				theMenu.stop().animate({height:0},400,function(){
+					$(this).css({display:"none"});
+				});
+			}
+		);
+	});
+}
+</script>
+
+
+
+	<div class="leftNav-item">
+		<ul>
+			<li>
+				<i class="fa fa-location-arrow"></i>
+				<a href="javascript:void(0)" class="rota">业务合作</a>
+			</li>
+			<li title="在线客服">
+				<i class="fa fa-comments-o"></i>
+				<a href="javascript:void(0)"class="rota">在线客服</a>
+			</li> 
+			<li lay-data="img" data-fooc="">
+				<i class="fa fa-money"></i><a href="javascript:;" class="rota">小额打赏</a>
+			</li> 
+			<li title="返回顶部" class="for-top">
+				<i class="fa fa-arrow-up"></i>
+				<a href="javascript:;" class="rota">去顶部</a>
+			</li>
+		</ul>
+	</div>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="js/nav.js"></script>
+
+
+
+
+
+
+		<main>
+        
+			<header class="codrops-header">
+				<h1 class="codrops-header__title"></h1>
+			</header>
+			<div class="content content--side">
+				<div class="control control--grids">
+					<span class="control__title">switch layout</span>
+					<div class="control__item">
+						<input class="control__radio" type="radio" name="grid-type" value="grid--type-a" id="control-grid-a" checked>
+						<label class="control__label" for="control-grid-a">grid A</label>
+					</div>
+					<div class="control__item">
+						<input class="control__radio" type="radio" name="grid-type" value="grid--type-b" id="control-grid-b">
+						<label class="control__label" for="control-grid-b">grid B</label>
+					</div>
+					<div class="control__item">
+						<input class="control__radio" type="radio" name="grid-type" value="grid--type-c" id="control-grid-c">
+						<label class="control__label" for="control-grid-c">grid C</label>
+					</div>
+				</div>	
+			</div>
+			<div class="content content--side content--right">
+				<div class="control control--effects">
+					<span class="control__title">run effect</span>
+					<button class="control__btn" data-fx="Hapi">Hapi</button>
+					<button class="control__btn" data-fx="Amun">Amun</button>
+					<button class="control__btn" data-fx="Kek">Kek</button>
+					<button class="control__btn" data-fx="Isis">Isis</button>
+					<button class="control__btn" data-fx="Montu">Montu</button>
+					<button class="control__btn" data-fx="Osiris">Osiris</button>
+					<button class="control__btn" data-fx="Satet">Satet</button>
+					<button class="control__btn" data-fx="Atum">Atum</button>
+					<button class="control__btn" data-fx="Ra">Ra</button>
+					<button class="control__btn" data-fx="Sobek">Sobek</button>
+					<button class="control__btn" data-fx="Ptah">Ptah</button>
+					<button class="control__btn" data-fx="Bes">Bes</button>
+					<button class="control__btn" data-fx="Seker">Seker</button>
+					<button class="control__btn" data-fx="Nut">Nut</button>
+					<button class="control__btn" data-fx="Shu">Shu</button>
+				</div>
+			</div>
+			<div class="content content--center">
+				<div class="grid grid--type-a">
+					<div class="grid__sizer"></div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/1.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/2.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link pater" href="#">
+							<div class="pater__img"></div>
+							<div class="pater__content">
+								<h2 class="pater__title" aria-label="fullstory">See Every Click, Swipe, <br> and Scroll</h2>
+								<p class="pater__desc">See how users experience your designs with FullStory.</p>
+								<span class="pater__call">Get it free today!</span>
+							</div>
+						</a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/3.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/4.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/5.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/6.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/7.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/8.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/9.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/10.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/11.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/2.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/4.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/8.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/10.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/1.jpg" alt="Some image" /></a>
+					</div>
+				</div>
+				<div class="grid grid--type-b">
+					<div class="grid__sizer"></div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/11.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/5.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link pater pater--small" href="#">
+							<div class="pater__img"></div>
+							<div class="pater__content">
+								<h2 class="pater__title" aria-label="fullstory">See Every Click, Swipe, <br> and Scroll</h2>
+								<p class="pater__desc">See how users experience your designs with FullStory.</p>
+								<span class="pater__call">Get it free today!</span>
+							</div>
+						</a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/2.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/1.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/4.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/6.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/7.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/8.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/5.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/2.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/3.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/4.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/5.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/6.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/7.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/8.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/1.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/2.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/3.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/4.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/5.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/6.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/7.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/8.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set1/11.jpg" alt="Some image" /></a>
+					</div>
+				</div>
+				<div class="grid grid--type-c">
+					<div class="grid__sizer"></div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/1.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/2.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link pater" href="#">
+							<div class="pater__img"></div>
+							<div class="pater__content">
+								<h2 class="pater__title" aria-label="fullstory">See Every Click, Swipe, <br> and Scroll</h2>
+								<p class="pater__desc">See how users experience your designs with FullStory.</p>
+								<span class="pater__call">Get it free today!</span>
+							</div>
+						</a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/3.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/4.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/5.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/6.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/10.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/11.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/7.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/8.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/9.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/2.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/4.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/6.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/8.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/10.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/1.jpg" alt="Some image" /></a>
+					</div>
+					<div class="grid__item">
+						<a class="grid__link" href="#"><img class="grid__img" src="img/set3/2.jpg" alt="Some image" /></a>
+					</div>
+				</div>
+			</div>
+			
+		</main>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/main.js"></script>
+        <div class="htmleaf-container">
+		
+		<div id='ss_menu'>
+		  <div>
+		    <i class="fa fa-qq"></i>
+		  </div>
+		  <div>
+		    <i class="fa fa-weibo"></i>
+		  </div>
+		  <div>
+		    <i class="fa fa-weixin"></i>
+		  </div>
+		  <div>
+		    <i class="fa fa-renren"></i>
+		  </div>
+		  <div class='menu'>
+		    <div class='share' id='ss_toggle' data-rot='180'>
+		      <div class='circle'></div>
+		      <div class='bar'></div>
+		    </div>
+		  </div>
+		</div>
+		
+	</div>
+	
+	<script src="http://www.jq22.com/jquery/2.1.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+	<script>
+	$(document).ready(function (ev) {
+	    var toggle = $('#ss_toggle');
+	    var menu = $('#ss_menu');
+	    var rot;
+	    $('#ss_toggle').on('click', function (ev) {
+	        rot = parseInt($(this).data('rot')) - 180;
+	        menu.css('transform', 'rotate(' + rot + 'deg)');
+	        menu.css('webkitTransform', 'rotate(' + rot + 'deg)');
+	        if (rot / 180 % 2 == 0) {
+	            toggle.parent().addClass('ss_active');
+	            toggle.addClass('close');
+	        } else {
+	            toggle.parent().removeClass('ss_active');
+	            toggle.removeClass('close');
+	        }
+	        $(this).data('rot', rot);
+	    });
+	    menu.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+	        if (rot / 180 % 2 == 0) {
+	            $('#ss_menu div i').addClass('ss_animate');
+	        } else {
+	            $('#ss_menu div i').removeClass('ss_animate');
+	        }
+	    });
+	});
+	</script>
+	</body>
+</html>

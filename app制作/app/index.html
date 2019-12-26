@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/exam1.css">
+		<script src="js/iconfont.js"></script>
+		<link herf="css/iconfont.css" rel="stylesheet"/>
+		<link herf="index.css" rel="stylesheet"/>
+		<link rel="stylesheet" herf="css/iconfont.css"/>
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+	</head>
+	<style>
+.icon {
+  width: 3em;
+  height: 3em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">2018-exam</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li id="switch" class="mui-table-view-cell">
+					定时轮播
+					<div class="mui-switch">
+						<div class="mui-switch-handle"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="slider" class="mui-slider" >
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="images/yuantiao.jpg">
+					</a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/aby.jpg">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/aby1.jpg">
+					</a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/aby2.jpg">
+					</a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/aby3.jpg">
+					</a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="images/aby4.jpg">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+		    <a class="mui-tab-item mui-active" href="index.html">
+		        <span class="mui-icon mui-icon-home"></span>
+		        <span class="mui-tab-label">首页</span>
+		    </a>
+		    <a class="mui-tab-item" href="imageviewer.html">
+		        <span class="mui-icon mui-icon-phone"></span>
+		        <span class="mui-tab-label">图片</span>
+		    </a>
+		    <a class="mui-tab-item" href="page1.html">
+		        <span class="mui-icon mui-icon-email"></span>
+		        <span class="mui-tab-label">人物志</span>
+		    </a>
+		    <a class="mui-tab-item" href="login.html">
+		        <span class="mui-icon mui-icon-gear"></span>
+		        <span class="mui-tab-label">登录</span>
+		    </a>
+		</nav>
+		<div class="mui-content">
+		        <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="http://www.cctv.com">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-tongzhi"></use>
+</svg>
+		                    
+		                    <div class="mui-media-body">新闻</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="https://www.airbnb.cn/?af=43889068&c=.pi12.pkqihoo_brd_brandzone_demand_title_p1">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-xiuxi"></use>
+</svg>
+		                    <div class="mui-media-body">休息</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="offcanvas-drag-left.html">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-tab"></use>
+</svg>
+		                    <div class="mui-media-body">旅行</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="http://www.7k7k.com/flash_fl/485_1.htm">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-xiuxian"></use>
+</svg>
+		                    <div class="mui-media-body">休闲</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="https://www.yesmywine.com/topic/castle/00241.html">
+		                   <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-jiushui"></use>
+</svg>
+		                    <div class="mui-media-body">酒水</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="https://weibo.com">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-kefu-mian"></use>
+</svg>
+		                    <div class="mui-media-body">社交</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="https://mail.qq.com">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-bianji"></use>
+</svg>
+		                    <div class="mui-media-body">写信</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="https://www.taobao.com">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-liwu"></use>
+</svg>
+		                    <div class="mui-media-body">购物</div></a></li>
+		           <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="https://weixin.qq.com">
+		                    <svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-dianhua"></use>
+</svg>
+		                    <div class="mui-media-body">联系我</div></a></li>
+		        </ul> 
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			var slider = mui("#slider");
+			document.getElementById("switch").addEventListener('toggle', function(e) {
+				if (e.detail.isActive) {
+					slider.slider({
+						interval: 5000
+					});
+				} else {
+					slider.slider({
+						interval: 0
+					});
+				}
+			});
+		</script>
+	<script >
+	mui.init();   	mui('body').on('tap','a',function(){document.location.href=this.href;});
+	</script>
+
+	</body>
+
+</html>
